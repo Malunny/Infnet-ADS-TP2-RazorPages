@@ -1,0 +1,31 @@
+@page "/city/create"
+@model WebApp.Pages.CreateCity
+
+@{
+    ViewData["Title"] = "Create City";
+}
+
+<div class="card">
+    <header class="card-header">
+        <h3>City Creator</h3>
+    </header>
+    <form method="post">
+        <div class="d-flex flex-column card-body gap-1">
+            <label>
+                
+            </label>
+            <label class="form-label" for="cityName">City Name</label>
+            <input id="cityName" 
+                class="form-control" type="text" asp-for="@Model.CityName"/>
+
+            @if (!string.IsNullOrEmpty(Model.CityName))
+            {
+                <b class="d-block">The @Model.CityName has been created!</b>
+            }
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-primary">Create</button>
+        </div>
+    </form>
+        
+</div>
