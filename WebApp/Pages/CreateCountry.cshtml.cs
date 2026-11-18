@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using WebApp.Models;
@@ -32,6 +33,6 @@ public class CreateCountry : PageModel
     public class InputModel
     {
         public string CountryName { get; set; }
-        public string CountryCode { get; set; }
+        [StringLength(2, MinimumLength = 2)] public string CountryCode { get; set; }
     }
 }
