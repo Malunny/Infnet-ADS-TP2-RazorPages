@@ -1,0 +1,34 @@
+@page "/country/list"
+@model WebApp.Pages.CountryListing
+
+@{
+    ViewData["Title"] = "Country Listing";
+}
+
+<div class="card">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>
+                Code
+            </th>
+            <th>
+                Name
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var country in MemoryStorage.Countries)
+        {
+            <tr>
+                <td>
+                    @country.ContryCode
+                </td>
+                <td>
+                    @country.CountryName
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

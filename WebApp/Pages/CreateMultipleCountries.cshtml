@@ -1,0 +1,43 @@
+@page "/country/createMultiple"
+@model WebApp.Pages.CreateMultipleCountries
+
+@{
+    ViewData["Title"] = "Create Multiple Countries";
+}
+
+<div class="card">
+    <header class="card-header">
+        <h3>Country Creator</h3>
+    </header>
+    <form method="post">
+        <div class="d-flex flex-column card-body gap-1">
+            @for (int i = 0; i < Model.Inputs.Count; i++)
+            {
+                <b>Country @(i+1)</b>
+                <label class="form-label" for="countryName">Name</label>
+                <input id="countryName" class="form-control" type="text" asp-for="Inputs[i].CountryName"/>
+                <span asp-validation-for="Inputs[i].CountryName"></span>
+
+                <label class="form-label" for="countryCode">Code</label>
+                <input id="countryCode" class="form-control" type="text" asp-for="Inputs[i].CountryCode"/>
+                <span asp-validation-for="Inputs[i].CountryCode"></span>
+                @if (i != Model.Inputs.Count - 1)
+                {
+                    <div class="w-100 bg-black" style="height: 1px;"></div>                    
+                }
+            }
+            
+            @if (!string.IsNullOrEmpty(TempData["CountryName"]?.ToString()))
+            {
+                <b class="d-block">The @TempData["CountryName"] has been created!</b>
+            }
+            @if (!string.IsNullOrEmpty(TempData["Error"]?.ToString()))
+            {
+                <b class="d-block text-danger">@TempData["Error"]</b>
+            }
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-primary">Create</button>
+        </div>
+    </form>
+</div>
