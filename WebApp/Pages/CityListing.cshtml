@@ -1,0 +1,21 @@
+@page "/city/listing"
+@model WebApp.Pages.CityListing
+
+@{
+    ViewData["CityListing"] = "City Listing";
+}
+
+<div class="card">
+    <div class="card-header">
+        Cities
+    </div>
+    <ul class="list-group">
+        @foreach (var city in Model.Cities)
+        {
+            <li class="list-group-item">
+                @city
+            </li>
+        }
+    </ul>
+</div>
+
