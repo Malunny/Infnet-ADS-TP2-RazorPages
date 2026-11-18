@@ -5,14 +5,14 @@ namespace WebApp.Pages;
 
 public class CreateCity : PageModel
 {
-    [BindProperty] public string CityName { get; set; } 
     public void OnGet()
     {
         
     }
 
-    public void OnPost()
+    public void OnPost(string cityName)
     {
-        TempData["CityName"] = CityName;
+        Console.WriteLine(cityName);
+        TempData["CityName"] = cityName;
     }
 }

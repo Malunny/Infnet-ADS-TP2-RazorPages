@@ -16,11 +16,11 @@
             </label>
             <label class="form-label" for="cityName">City Name</label>
             <input id="cityName" 
-                class="form-control" type="text" asp-for="@Model.CityName"/>
+                class="form-control" type="text" name="cityName"/>
 
-            @if (!string.IsNullOrEmpty(Model.CityName))
+            @if (!string.IsNullOrEmpty(TempData["CityName"]?.ToString()))
             {
-                <b class="d-block">The @Model.CityName has been created!</b>
+                <b class="d-block">The @TempData["CityName"] has been created!</b>
             }
         </div>
         <div class="card-footer">
