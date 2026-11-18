@@ -1,0 +1,23 @@
+@page "/notes/downloadListing"
+@model WebApp.Pages.NotesDownloadListing
+
+@{
+    ViewData["Title"] = "Notes Download Listing";
+}
+
+<div class="card">
+    <header class="card-header">
+        <h3>Notes Download Listing</h3>
+    </header>
+    <div class="card-body">
+        <ul class="list-group">
+            @foreach (var note in Model.Notes)
+            {
+            <li class="list-group-item">
+                <a asp-page="NotesDownloadListing"
+                    asp-page-handler="DownloadNote" asp-route-fileName="@note.Name">@note.Name</a>
+            </li>
+            }
+        </ul>
+    </div>
+</div>
