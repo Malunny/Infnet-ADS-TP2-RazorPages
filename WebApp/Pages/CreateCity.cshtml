@@ -1,8 +1,12 @@
 @page "/city/create"
-@model WebApp.Pages.CreateCity
+@model CreateCity
 
 @{
     ViewData["Title"] = "Create City";
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
 }
 
 <div class="card">
@@ -15,8 +19,8 @@
                 
             </label>
             <label class="form-label" for="cityName">City Name</label>
-            <input id="cityName" 
-                class="form-control" type="text" name="CityName"/>
+            <input id="cityName" class="form-control" type="text" asp-for="Input.CityName"/>
+            <span asp-validation-for="Input.CityName"></span>
 
             @if (!string.IsNullOrEmpty(TempData["CityName"]?.ToString()))
             {
@@ -31,5 +35,4 @@
             <button class="btn btn-primary">Create</button>
         </div>
     </form>
-        
 </div>

@@ -6,20 +6,24 @@ namespace WebApp.Pages;
 
 public class CreateCity : PageModel
 {
+    [BindProperty] public InputModel Input { get; set; } = new();
     public void OnGet()
     {
         
     }
 
-    public void OnPost(InputModel input)
+    public IActionResult OnPost()
     {
+        Console.WriteLine(ModelState.IsValid);
+        Console.WriteLine(Input.CityName);
         if (!ModelState.IsValid)
         {
             TempData["Error"] = "Invalid input";
-            return;
+            return Page();
         }
 
-        TempData["CityName"] = input.CityName;
+        TempData["CityName"] = Input.CityName;
+        return Page();
     }
 
     public class InputModel
