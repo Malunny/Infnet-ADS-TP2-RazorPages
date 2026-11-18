@@ -13,7 +13,7 @@
         @foreach (var city in Model.Cities)
         {
             <li class="list-group-item">
-                @city
+                <a asp-route-cityName="@city" asp-page="/CityDetails">@city</a>
             </li>
         }
     </ul>
