@@ -16,11 +16,15 @@
             </label>
             <label class="form-label" for="cityName">City Name</label>
             <input id="cityName" 
-                class="form-control" type="text" name="cityName"/>
+                class="form-control" type="text" name="CityName"/>
 
             @if (!string.IsNullOrEmpty(TempData["CityName"]?.ToString()))
             {
                 <b class="d-block">The @TempData["CityName"] has been created!</b>
+            }
+            @if (!string.IsNullOrEmpty(TempData["Error"]?.ToString()))
+            {
+                <b class="d-block text-danger">@TempData["Error"]</b>
             }
         </div>
         <div class="card-footer">

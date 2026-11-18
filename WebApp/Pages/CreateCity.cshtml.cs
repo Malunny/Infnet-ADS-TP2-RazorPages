@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -10,9 +11,19 @@ public class CreateCity : PageModel
         
     }
 
-    public void OnPost(string cityName)
+    public void OnPost(InputModel input)
     {
-        Console.WriteLine(cityName);
-        TempData["CityName"] = cityName;
+        if (!ModelState.IsValid)
+        {
+            TempData["Error"] = "Invalid input";
+            return;
+        }
+
+        TempData["CityName"] = input.CityName;
+    }
+
+    public class InputModel
+    {
+        [MinLength(3)] [Required] public string CityName { get; set; }
     }
 }
