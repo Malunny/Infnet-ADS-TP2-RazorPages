@@ -1,0 +1,15 @@
+@page "/city/{cityName}"
+@model WebApp.Pages.CityDetails
+
+@{
+    ViewData["Title"] = "City Details";
+}
+
+<div class="card">
+    <header class="card-header">
+        City Details    
+    </header>
+    <div class="card-body">
+        You are seeing @Model.CityName
+    </div>
+</div>
