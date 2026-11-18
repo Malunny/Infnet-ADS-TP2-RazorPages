@@ -1,0 +1,18 @@
+@page "/notes/save"
+@model WebApp.Pages.SaveNote
+
+@{
+    ViewData["Title"] = "Save Note";
+}
+
+<div class="card">
+    <header class="card-header">
+        Save Note
+    </header>
+    <form method="post" class="card-body">
+        <label for="content">Content</label>
+        <textarea id="content" name="input.Content"></textarea>
+        
+        <button class="btn btn-primary" type="submit">Save</button>
+    </form>
+</div>
