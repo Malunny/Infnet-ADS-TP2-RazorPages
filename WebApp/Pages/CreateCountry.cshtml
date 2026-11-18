@@ -1,0 +1,42 @@
+@page "/country/create"
+@model WebApp.Pages.CreateCountry
+
+@{
+    ViewData["Title"] = "Create Country";
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+<div class="card">
+    <header class="card-header">
+        <h3>Country Creator</h3>
+    </header>
+    <form method="post">
+        <div class="d-flex flex-column card-body gap-1">
+            <label>
+                
+            </label>
+            <label class="form-label" for="countryName">Name</label>
+            <input id="countryName" class="form-control" type="text" asp-for="Input.CountryName"/>
+            <span asp-validation-for="Input.CountryName"></span>
+
+            <label class="form-label" for="countryCode">Code</label>
+            <input id="countryCode" class="form-control" type="text" asp-for="Input.CountryCode"/>
+            <span asp-validation-for="Input.CountryCode"></span>
+            
+            @if (!string.IsNullOrEmpty(TempData["CountryName"]?.ToString()))
+            {
+                <b class="d-block">The @TempData["CountryName"] has been created!</b>
+            }
+            @if (!string.IsNullOrEmpty(TempData["Error"]?.ToString()))
+            {
+                <b class="d-block text-danger">@TempData["Error"]</b>
+            }
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-primary">Create</button>
+        </div>
+    </form>
+</div>
