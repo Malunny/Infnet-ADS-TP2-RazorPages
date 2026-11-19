@@ -19,25 +19,50 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav flex-grow-1">
+                <ul class="navbar-nav flex-grow-1 gap-1">
                     <li class="nav-item">
                         <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-page="/CountryListing">Country Listing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-page="/CreateCountry">Create Country</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-page="/CreateMultipleCountries">Create Multiple Countries</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-page="/CreateCity">Create City</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-page="/CityListing">City Listing</a>
-                    </li>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                            City and Countries
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/CountryListing">Country Listing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/CreateCountry">Create Country</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/CreateMultipleCountries">Create Multiple Countries</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/CreateCity">Create City</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/CityListing">City Listing</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                            Notes
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/SaveNote">Save Note</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/NotesDownloadListing">Notes Downloads</a>
+                            </li>
+                        </ul>
+                    </div>
+                    
                 </ul>
             </div>
         </div>
